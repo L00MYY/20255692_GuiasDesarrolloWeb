@@ -1,0 +1,32 @@
+
+
+body {
+    background-color: lightblue;
+}
+
+div {
+    font-size: 20px;
+}
+
+h2 {
+    text-decoration: underline;
+    color: white;
+}
+
+p.primero {
+    color: navy;
+    font-weight: bold;
+}
+
+p.segundo {
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+p.tercero {
+    font-size: 12px;
+}
+
+span.italica {
+    font-style: italic;
+}

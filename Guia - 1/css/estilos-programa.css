@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#cabecera {
+    background-color: #2d2d2d;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #e6b800;
+}
+
+.titulo-principal {
+    font-size: 2.8em;
+    color: #e6b800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 1.2em;
+    color: #cccccc;
+    margin: 5px 0 0;
+}
+
+#contenido-principal {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.seccion-titulo {
+    color: #e6b800;
+    font-size: 1.8em;
+    border-bottom: 2px solid #e6b800;
+    padding-bottom: 5px;
+}
+
+.texto-descripcion {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.destacado {
+    color: #e6b800;
+    font-weight: bold;
+}
+
+.personaje {
+    color: #66ccff;
+    font-style: italic;
+}
+
+.imagen-serie {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.lista-actores {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-actores li {
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+}
+
+.actor {
+    color: #ff9966;
+    font-weight: bold;
+}
+
+#pie-pagina {
+    background-color: #2d2d2d;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #e6b800;
+    margin-top: 30px;
+}
+
+.footer-texto {
+    color: #aaaaaa;
+    font-size: 0.9em;
+}
