@@ -55,43 +55,62 @@
         </ul>
     </div>
 
-    <div class="seccion">
-        <h2>Análisis de Correspondencia</h2>
-        <table class="tabla-analisis">
-            <thead>
-                <tr>
-                    <th>Contenido ya estudiado en el curso</th>
-                    <th>Contenido nuevo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>.clase</code> (selector de clase)</td>
-                    <td><code>display: grid;</code> – Organiza las películas en columnas automáticas.</td>
-                </tr>
-                <tr>
-                    <td><code>background-color</code> y <code>color</code></td>
-                    <td><code>@media (max-width: 768px)</code> – Cambia el diseño para móviles.</td>
-                </tr>
-                <tr>
-                    <td><code>font-family</code> y <code>text-align</code></td>
-                    <td><code>transition: transform 0.3s;</code> – Efecto de elevación al pasar el mouse.</td>
-                </tr>
-                <tr>
-                    <td><code>#id</code> (selector de ID)</td>
-                    <td><code>box-shadow: 0 4px 8px rgba(0,0,0,0.2);</code> – Sombra para profundidad.</td>
-                </tr>
-                <tr>
-                    <td>Enlaces <code>a</code> y <code>:hover</code></td>
-                    <td><code>border-radius: 12px;</code> – Esquinas redondeadas en botones y tarjetas.</td>
-                </tr>
-                <tr>
-                    <td><code>font-weight: bold</code></td>
-                    <td><code>flex-wrap: wrap;</code> – Permite que los elementos se ajusten en varias líneas.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="seccion">
+    <h2>Análisis de Correspondencia</h2>
+    <table class="tabla-analisis">
+        <thead>
+            <tr>
+                <th>Contenido ya estudiado en el curso</th>
+                <th>Contenido nuevo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>.clase</code> (selector de clase)</td>
+                <td><code>display: grid;</code> – Organiza las películas en columnas automáticas.</td>
+            </tr>
+            <tr>
+                <td><code>background-color</code> y <code>color</code></td>
+                <td><code>@media (max-width: 768px)</code> – Cambia el diseño para móviles.</td>
+            </tr>
+            <tr>
+                <td><code>font-family</code> y <code>text-align</code></td>
+                <td><code>transition: transform 0.3s;</code> – Efecto de elevación al pasar el mouse.</td>
+            </tr>
+            <tr>
+                <td><code>#id</code> (selector de ID)</td>
+                <td><code>box-shadow: 0 4px 8px rgba(0,0,0,0.2);</code> – Sombra para profundidad.</td>
+            </tr>
+            <tr>
+                <td>Enlaces <code>a</code> y <code>:hover</code></td>
+                <td><code>border-radius: 12px;</code> – Esquinas redondeadas en botones y tarjetas.</td>
+            </tr>
+            <tr>
+                <td><code>font-weight: bold</code></td>
+                <td><code>flex-wrap: wrap;</code> – Permite que los elementos se ajusten en varias líneas.</td>
+            </tr>
+            <!-- 👇 NUEVAS FILAS AGREGADAS 👇 -->
+            <tr>
+                <td>Selectores de etiqueta (<code>html</code>, <code>body</code>)</td>
+                <td>
+                    <code>:root</code> – Pseudoclase que selecciona el elemento raíz (<code>&lt;html&gt;</code>). 
+                    Se usa para declarar <strong>variables CSS globales</strong> (ej: <code>--color-principal</code>) 
+                    que se reutilizan en todo el documento mediante <code>var()</code>, facilitando cambios globales.
+                </td>
+            </tr>
+            <tr>
+                <td><code>@media</code> básico (para tamaños de pantalla) y selector universal <code>*</code></td>
+                <td>
+                    <code>@media (prefers-reduced-motion: reduce)</code> – Detecta si el usuario ha activado 
+                    la opción de "reducir movimiento" en su sistema operativo. Su función es <strong>desactivar 
+                    animaciones y transiciones</strong> (ej: <code>scroll-behavior: auto</code> y 
+                    <code>transition: none !important</code>) para mejorar la accesibilidad de personas con 
+                    mareos, vértigo o epilepsia.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
     <footer>
         <p>© 2025 - Todos los derechos reservados</p>
