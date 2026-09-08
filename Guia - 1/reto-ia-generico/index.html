@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es-SV">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinemark El Salvador — Cartelera, horarios y boletos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../reto-ia-generico/reto-ia-genericoStyle/reto-ia-gen.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-row">
+    <a href="#" class="brand">
+      <span class="mark">CINE<span>MARK</span></span>
+      <span class="sub">EL SALVADOR</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#cartelera">Cartelera</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#cines">Cines</a>
+      <a href="#dulceria">Dulcería</a>
+      <a href="#cineplus">Cineplus+</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#" class="login-link">Iniciar sesión</a>
+      <a href="#cartelera" class="btn btn-gold btn-small">Comprar boletos</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow-free">Estreno de la semana</p>
+        <h1>La sala se apaga.<br><em>La historia empieza.</em></h1>
+        <p>Elegí tu película, tu formato y tu horario favorito en los cines Cinemark de todo El Salvador — y asegurá tu asiento antes de que se agote.</p>
+
+        <div class="hero-meta">
+          <div><strong>6 estrenos</strong>esta semana</div>
+          <div><strong>2D · 3D · XD</strong>formatos disponibles</div>
+          <div><strong>7 complejos</strong>en el país</div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#cartelera" class="btn btn-gold">Ver cartelera completa</a>
+          <a href="#" class="btn btn-ghost">Ver tráiler</a>
+        </div>
+      </div>
+
+      <div class="hero-poster">
+        <span class="tag">XD · Estreno</span>
+        <div class="title-block">
+          <p class="display">El Último Vuelo de Halcón</p>
+          <p>Acción / Ciencia ficción · 2h 08min</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTELERA -->
+  <section id="cartelera">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>En cartelera</h2>
+          <p>Tocá una película para ver sus horarios y elegir el formato que prefieras.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <input class="search" type="text" id="movieSearch" placeholder="Buscar película...">
+        <select id="genreFilter">
+          <option value="">Todos los géneros</option>
+          <option value="accion">Acción</option>
+          <option value="animacion">Animación</option>
+          <option value="terror">Terror</option>
+          <option value="comedia">Comedia</option>
+          <option value="drama">Drama</option>
+        </select>
+        <select id="dayFilter">
+          <option value="hoy">Hoy</option>
+          <option value="manana">Mañana</option>
+          <option value="finde">Este fin de semana</option>
+        </select>
+      </div>
+
+      <div class="movie-grid" id="movieGrid">
+        <!-- Cards injected by JS from data below, but written statically for no-JS fallback -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOCIONES -->
+  <section id="promociones" class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Promociones activas</h2>
+          <p>Aprovechá estos beneficios en boletos y dulcería en cualquiera de nuestros complejos.</p>
+        </div>
+      </div>
+      <div class="promo-band">
+        <div class="promo-card promo-1">
+          <h3>Martes 2x1</h3>
+          <p>Todos los martes, llevá a alguien más sin pagar de más en funciones 2D seleccionadas.</p>
+          <a href="#" class="btn btn-ghost">Ver condiciones</a>
+        </div>
+        <div class="promo-card promo-2">
+          <h3>Combo Pantalla Grande</h3>
+          <p>Palomitas grandes + dos bebidas a precio especial, disponible todos los días.</p>
+          <a href="#" class="btn btn-ghost">Ver combo</a>
+        </div>
+        <div class="promo-card promo-3">
+          <h3>Cineplus+ recompensas</h3>
+          <p>Sumá puntos con cada compra y canjealos por boletos y dulcería gratis.</p>
+          <a href="#cineplus" class="btn btn-ghost">Unirme ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CINES -->
+  <section id="cines">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Encontrá tu cine</h2>
+          <p>Complejos Cinemark cerca de vos, con sus formatos y salas disponibles.</p>
+        </div>
+      </div>
+      <div class="cinema-list">
+        <div class="cinema-card">
+          <h3>Metrocentro San Salvador</h3>
+          <p class="addr">Boulevard de Los Héroes, San Salvador</p>
+          <div class="chips"><span>2D</span><span>3D</span><span>XD</span><span>D-BOX</span></div>
+          <span class="link-row">Cómo llegar →</span>
+        </div>
+        <div class="cinema-card">
+          <h3>Multiplaza</h3>
+          <p class="addr">Antiguo Cuscatlán, La Libertad</p>
+          <div class="chips"><span>2D</span><span>3D</span><span>Dulcería premium</span></div>
+          <span class="link-row">Cómo llegar →</span>
+        </div>
+        <div class="cinema-card">
+          <h3>Metrocentro Santa Ana</h3>
+          <p class="addr">Santa Ana centro</p>
+          <div class="chips"><span>2D</span><span>3D</span></div>
+          <span class="link-row">Cómo llegar →</span>
+        </div>
+        <div class="cinema-card">
+          <h3>Metrocentro San Miguel</h3>
+          <p class="addr">San Miguel oriente</p>
+          <div class="chips"><span>2D</span><span>3D</span><span>XD</span></div>
+          <span class="link-row">Cómo llegar →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CINEPLUS -->
+  <section id="cineplus" class="section-alt">
+    <div class="wrap">
+      <div class="loyalty">
+        <div>
+          <h2>Cineplus+, tu cuenta de siempre</h2>
+          <p>Registrate una vez y comprá más rápido la próxima: boletos guardados, puntos por cada visita y acceso anticipado a preventas.</p>
+          <div class="loyalty-points">
+            <div><span class="num">01</span><p>Comprá boletos en segundos con tu método de pago guardado.</p></div>
+            <div><span class="num">02</span><p>Acumulá puntos y canjealos por entradas o dulcería.</p></div>
+            <div><span class="num">03</span><p>Enterate primero de preventas y estrenos especiales.</p></div>
+          </div>
+          <a href="#" class="btn btn-gold" style="margin-top:26px;display:inline-flex;">Crear mi cuenta gratis</a>
+        </div>
+        <div class="loyalty-visual"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DULCERIA (breve) -->
+  <section id="dulceria">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Dulcería</h2>
+          <p>Pedí tus combos favoritos y recogelos listos al llegar a la sala.</p>
+        </div>
+        <a href="#" class="btn btn-ghost">Ver menú completo</a>
+      </div>
+      <div class="promo-band">
+        <div class="promo-card promo-3"><h3>Combo Clásico</h3><p>Palomitas medianas + bebida grande.</p></div>
+        <div class="promo-card promo-1"><h3>Combo Pareja</h3><p>Palomitas grandes + dos bebidas + dulce.</p></div>
+        <div class="promo-card promo-2"><h3>Combo Kids</h3><p>Palomitas pequeñas + jugo + sorpresa.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="mark">CINE<span>MARK</span></span>
+        <p>La mejor experiencia de cine en El Salvador: estrenos, formatos especiales y beneficios Cineplus+.</p>
+        <div class="app-buttons">
+          <a href="#">Google Play</a>
+          <a href="#">App Store</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programación</h4>
+        <ul>
+          <li><a href="#cartelera">Cartelera</a></li>
+          <li><a href="#">Próximamente</a></li>
+          <li><a href="#">Preventa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sobre Cinemark</h4>
+        <ul>
+          <li><a href="#">Quiénes somos</a></li>
+          <li><a href="#">Formatos y salas</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Otros servicios</h4>
+        <ul>
+          <li><a href="#">Eventos privados</a></li>
+          <li><a href="#">Ventas empresariales</a></li>
+          <li><a href="#">Publicidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Escríbenos</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Facturación electrónica</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cinemark El Salvador. Todos los derechos reservados.</span>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">in</a>
+        <a href="#" aria-label="X">x</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header shrink on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile nav toggle (simple show/hide of main nav as a stacked panel)
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.querySelector('.main-nav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.flexDirection = 'column';
+    mainNav.style.position = 'fixed';
+    mainNav.style.top = '64px';
+    mainNav.style.left = '0';
+    mainNav.style.right = '0';
+    mainNav.style.background = '#170F1F';
+    mainNav.style.padding = '20px 28px';
+    mainNav.style.gap = '18px';
+    mainNav.style.borderBottom = '1px solid rgba(246,241,234,0.1)';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // ---- Movie data ----
+  const movies = [
+    {
+      title: "El Último Vuelo de Halcón",
+      genre: "accion", genreLabel: "Acción",
+      duration: "2h 08min", rating: "B15",
+      formats: ["2D","3D","XD"],
+      showtimes: { "2D": ["1:30 pm","4:15 pm","7:00 pm"], "3D": ["5:45 pm","9:10 pm"], "XD": ["8:30 pm"] }
+    },
+    {
+      title: "Reino de Papel",
+      genre: "animacion", genreLabel: "Animación",
+      duration: "1h 42min", rating: "A",
+      formats: ["2D","3D"],
+      showtimes: { "2D": ["11:00 am","1:20 pm","3:40 pm"], "3D": ["6:00 pm"] }
+    },
+    {
+      title: "La Casa del Silencio",
+      genre: "terror", genreLabel: "Terror",
+      duration: "1h 35min", rating: "C",
+      formats: ["2D"],
+      showtimes: { "2D": ["8:00 pm","10:15 pm"] }
+    },
+    {
+      title: "Vecinos de Toda la Vida",
+      genre: "comedia", genreLabel: "Comedia",
+      duration: "1h 50min", rating: "B",
+      formats: ["2D"],
+      showtimes: { "2D": ["2:00 pm","4:30 pm","7:15 pm"] }
+    },
+    {
+      title: "Bajo el Mismo Cielo",
+      genre: "drama", genreLabel: "Drama",
+      duration: "2h 02min", rating: "B",
+      formats: ["2D","D-BOX"],
+      showtimes: { "2D": ["3:00 pm","6:20 pm"], "D-BOX": ["9:00 pm"] }
+    },
+    {
+      title: "Escuadrón Nocturno",
+      genre: "accion", genreLabel: "Acción",
+      duration: "1h 58min", rating: "B15",
+      formats: ["2D","XD"],
+      showtimes: { "2D": ["12:45 pm","3:30 pm"], "XD": ["6:45 pm","9:30 pm"] }
+    }
+  ];
+
+  const posterGradients = [
+    "conic-gradient(from 200deg at 25% 15%, #6B4FA0, #D6473F, #F2B84B)",
+    "conic-gradient(from 20deg at 70% 80%, #2E1F3F, #9C86D6, #F2B84B)",
+    "conic-gradient(from 120deg at 50% 50%, #3A0F17, #D6473F, #170F1F)",
+    "conic-gradient(from 300deg at 30% 70%, #1F4B3F, #6B4FA0, #F2B84B)",
+    "conic-gradient(from 80deg at 60% 20%, #2A1440, #D6473F, #6B4FA0)",
+    "conic-gradient(from 250deg at 40% 40%, #1B1226, #F2B84B, #D6473F)"
+  ];
+
+  const grid = document.getElementById('movieGrid');
+
+  function renderMovies(list){
+    grid.innerHTML = "";
+    list.forEach((m, i) => {
+      const card = document.createElement('article');
+      card.className = 'movie-card';
+      card.dataset.genre = m.genre;
+      card.dataset.title = m.title.toLowerCase();
+
+      const defaultFmt = m.formats[0];
+      card.innerHTML = `
+        <div class="poster" style="background:${posterGradients[i % posterGradients.length]}">
+          <span class="rating">${m.rating}</span>
+          <div class="formats">${m.formats.map(f => `<span>${f}</span>`).join('')}</div>
+        </div>
+        <div class="movie-body">
+          <h3>${m.title}</h3>
+          <div class="movie-info">
+            <span>${m.genreLabel}</span>
+            <span>${m.duration}</span>
+          </div>
+          <div class="movie-actions">
+            <button class="btn btn-gold toggle-times">Ver horarios</button>
+          </div>
+        </div>
+        <div class="showtimes-panel">
+          <div class="showtimes-panel-inner">
+            <div class="fmt-tabs">
+              ${m.formats.map((f, idx) => `<button data-fmt="${f}" class="${idx===0 ? 'active':''}">${f}</button>`).join('')}
+            </div>
+            <div class="time-pills" data-current="${defaultFmt}">
+              ${m.showtimes[defaultFmt].map(t => `<button>${t}</button>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Toggle showtimes panel
+      const toggleBtn = card.querySelector('.toggle-times');
+      toggleBtn.addEventListener('click', () => {
+        card.classList.toggle('open');
+        toggleBtn.textContent = card.classList.contains('open') ? 'Ocultar horarios' : 'Ver horarios';
+      });
+
+      // Format tabs
+      const tabs = card.querySelectorAll('.fmt-tabs button');
+      const timePillsWrap = card.querySelector('.time-pills');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const fmt = tab.dataset.fmt;
+          timePillsWrap.innerHTML = m.showtimes[fmt].map(t => `<button>${t}</button>`).join('');
+        });
+      });
+
+      // Selecting a showtime -> simple confirmation (placeholder for real checkout flow)
+      timePillsWrap.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+          alert(`Seleccionaste "${m.title}" a las ${e.target.textContent}. Aquí continuaría la compra de boletos.`);
+        }
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  renderMovies(movies);
+
+  // Filters
+  const searchInput = document.getElementById('movieSearch');
+  const genreSelect = document.getElementById('genreFilter');
+
+  function applyFilters(){
+    const q = searchInput.value.trim().toLowerCase();
+    const genre = genreSelect.value;
+    const filtered = movies.filter(m => {
+      const matchesQuery = m.title.toLowerCase().includes(q);
+      const matchesGenre = !genre || m.genre === genre;
+      return matchesQuery && matchesGenre;
+    });
+    renderMovies(filtered);
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  genreSelect.addEventListener('change', applyFilters);
+</script>
+
+</body>
+</html>

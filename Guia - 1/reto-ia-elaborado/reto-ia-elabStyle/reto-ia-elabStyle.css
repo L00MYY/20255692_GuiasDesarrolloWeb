@@ -1,0 +1,723 @@
+/* =========================================================
+   CINEMARK EL SALVADOR — REDISEÑO
+   Paleta: fondo #0f172a, superficie #1a2436, acentos #e50914 / #f5c518
+   Tipografía: Montserrat (títulos) + Roboto (texto)
+   ========================================================= */
+
+:root {
+  --bg: #0f172a;
+  --surface: #1a2436;
+  --surface-raised: #212d42;
+  --border: #2c3a52;
+  --red: #e50914;
+  --red-dark: #b8060f;
+  --gold: #f5c518;
+  --text: #ffffff;
+  --text-muted: #cccccc;
+  --text-faint: #8b95a7;
+
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --radius-card: 14px;
+  --radius-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 18px 40px rgba(229, 9, 20, 0.18);
+
+  --max-width: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* -----------------------------------------------------------
+   Header
+----------------------------------------------------------- */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 16px 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.brand span {
+  color: var(--red);
+}
+
+.main-nav {
+  display: flex;
+  gap: 26px;
+  flex: 1;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.is-active {
+  color: var(--text);
+  border-color: var(--red);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.btn-login {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-login:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.6rem;
+}
+
+/* -----------------------------------------------------------
+   Selector de sucursal — el elemento que debía dejar de perderse
+----------------------------------------------------------- */
+
+.branch-bar {
+  background: linear-gradient(90deg, #23120f 0%, var(--surface) 45%);
+  border-bottom: 1px solid var(--border);
+}
+
+.branch-bar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.branch-bar__pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.branch-bar__pin svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text);
+}
+
+.branch-bar__label {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 2px;
+}
+
+.branch-bar__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.branch-bar__change {
+  margin-left: auto;
+  background: var(--surface-raised);
+  border: 1px solid var(--red);
+  color: var(--text);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.branch-bar__change:hover {
+  background: var(--red);
+}
+
+/* -----------------------------------------------------------
+   Búsqueda rápida de entradas
+----------------------------------------------------------- */
+
+.quick-search {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 22px 26px;
+  margin: 28px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.quick-search__field label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+
+.quick-search__field select {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 11px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: var(--text);
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--red-dark);
+}
+
+/* -----------------------------------------------------------
+   Hero / Promoción
+----------------------------------------------------------- */
+
+.promo {
+  margin: 32px auto 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(circle at 20% 30%, #3a0409 0%, #17070a 55%, #0d0507 100%);
+  border: 1px solid #3a1015;
+}
+
+.promo__inner {
+  padding: 56px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.promo__text h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.promo__text p {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+
+.promo__dates {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 20px;
+}
+
+.promo__price {
+  text-align: center;
+  background: var(--surface);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.promo__price span {
+  display: block;
+}
+
+.promo__price .price-lead {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.promo__price .price-amount {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.promo__price .price-note {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+/* -----------------------------------------------------------
+   Secciones generales
+----------------------------------------------------------- */
+
+.section {
+  padding: 56px 0 12px;
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.section__head h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.section__head p {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------
+   Cartelera — grid de tarjetas de película
+----------------------------------------------------------- */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.movie-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--red);
+}
+
+.movie-card__poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(160deg, #2a3a56, #131c2c);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+
+.movie-card__poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card__badge {
+  position: relative;
+  z-index: 1;
+  background: var(--red);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.movie-card__body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.movie-card__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.movie-card__meta {
+  color: var(--text-faint);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.movie-card__showtimes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.showtime-pill {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.showtime-pill:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.movie-card__cta {
+  margin-top: auto;
+  background: var(--red);
+  color: var(--text);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: background 0.15s ease;
+}
+
+.movie-card__cta:hover {
+  background: var(--red-dark);
+}
+
+/* -----------------------------------------------------------
+   Próximos estrenos — carrusel horizontal
+----------------------------------------------------------- */
+
+.upcoming-scroller {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.upcoming-scroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+.upcoming-scroller::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-pill);
+}
+
+.upcoming-card {
+  scroll-snap-align: start;
+  flex: 0 0 220px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.upcoming-card__poster {
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(160deg, #2a3a56, #131c2c);
+}
+
+.upcoming-card__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upcoming-card__body {
+  padding: 12px 14px 16px;
+}
+
+.upcoming-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin: 0 0 6px;
+}
+
+.upcoming-card__date {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------
+   Footer
+----------------------------------------------------------- */
+
+.site-footer {
+  margin-top: 64px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(4, 1fr);
+  gap: 32px;
+  padding: 48px 0 28px;
+}
+
+.footer-brand__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.footer-brand p {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  max-width: 32ch;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.footer-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.footer-social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.footer-col h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--text);
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  transition: color 0.15s ease;
+}
+
+.footer-col a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 18px 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+
+/* -----------------------------------------------------------
+   Responsivo
+----------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quick-search {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .main-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap,
+  .site-header__bar,
+  .branch-bar__inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .promo__inner {
+    padding: 36px 24px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .quick-search {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .branch-bar__change {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinemark El Salvador — Cartelera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../reto-ia-elaborado/reto-ia-elabStyle/reto-ia-elabStyle.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__bar">
+    <a href="#" class="brand">CINE<span>MARK</span></a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#cartelera" class="is-active">Cartelera</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#cines">Cines</a>
+      <a href="#dulceria">Dulcería</a>
+      <a href="#proximos">Próximos estrenos</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-login" type="button">Iniciar sesión</button>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="branch-bar">
+  <div class="branch-bar__inner">
+    <div class="branch-bar__pin" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 8 12 8 12s8-6.6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+    </div>
+    <div>
+      <p class="branch-bar__label">Viendo cartelera de</p>
+      <p class="branch-bar__name">El Salvador — Metrocentro San Salvador</p>
+    </div>
+    <button class="branch-bar__change" type="button">Cambiar sucursal</button>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="quick-search" aria-label="Compra rápida de entradas">
+    <div class="quick-search__field">
+      <label for="qs-fecha">Fecha</label>
+      <select id="qs-fecha">
+        <option>Lunes 07 sep.</option>
+        <option>Martes 08 sep.</option>
+        <option>Miércoles 09 sep.</option>
+      </select>
+    </div>
+    <div class="quick-search__field">
+      <label for="qs-pelicula">Película</label>
+      <select id="qs-pelicula">
+        <option>Todas las películas</option>
+        <option>Zona Cero (Colony)</option>
+        <option>Mamut: El regreso de los dinosaurios</option>
+      </select>
+    </div>
+    <div class="quick-search__field">
+      <label for="qs-formato">Formato</label>
+      <select id="qs-formato">
+        <option>Cualquier formato</option>
+        <option>2D</option>
+        <option>3D</option>
+        <option>4D</option>
+      </select>
+    </div>
+    <div class="quick-search__field">
+      <label for="qs-hora">Hora</label>
+      <select id="qs-hora">
+        <option>Cualquier hora</option>
+        <option>Antes de las 6:00 pm</option>
+        <option>Después de las 6:00 pm</option>
+      </select>
+    </div>
+    <button class="btn-primary" type="button">Buscar funciones</button>
+  </section>
+
+  <section class="promo">
+    <div class="promo__inner">
+      <div class="promo__text">
+        <p class="promo__dates">Del 07 al 11 de septiembre</p>
+        <h2>Fiesta del cine: todas las funciones 2D y 3D a precio especial</h2>
+        <p>Aprovecha la semana con precio reducido en butacas tradicionales y D-Box. Válido en títulos seleccionados de la cartelera regular.</p>
+        <button class="btn-primary" type="button">Ver películas participantes</button>
+      </div>
+      <div class="promo__price">
+        <span class="price-lead">2D y 3D</span>
+        <span class="price-amount">$2.50</span>
+        <span class="price-note">4D a $7.50</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cartelera">
+    <div class="section__head">
+      <h2>Cartelera semanal</h2>
+      <p>5 estrenos en Metrocentro San Salvador</p>
+    </div>
+
+    <div class="movie-grid">
+
+      <article class="movie-card">
+        <div class="movie-card__poster">
+          <span class="movie-card__badge">Estreno</span>
+        </div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">Cuidado con los niños: El Heladero</h3>
+          <p class="movie-card__meta">Terror · Todos contratan</p>
+          <div class="movie-card__showtimes">
+            <span class="showtime-pill">17:20</span>
+            <span class="showtime-pill">19:45</span>
+            <span class="showtime-pill">22:10</span>
+          </div>
+          <button class="movie-card__cta" type="button">Comprar boletos</button>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="movie-card__poster">
+          <span class="movie-card__badge">Estreno</span>
+        </div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">Zona Cero (Colony)</h3>
+          <p class="movie-card__meta">C - Mayor de 15 · 125 min</p>
+          <div class="movie-card__showtimes">
+            <span class="showtime-pill">20:40</span>
+          </div>
+          <button class="movie-card__cta" type="button">Comprar boletos</button>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="movie-card__poster">
+          <span class="movie-card__badge">Estreno</span>
+        </div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">Mamut: El regreso de los dinosaurios</h3>
+          <p class="movie-card__meta">Animación · Todo público</p>
+          <div class="movie-card__showtimes">
+            <span class="showtime-pill">15:30</span>
+            <span class="showtime-pill">18:00</span>
+          </div>
+          <button class="movie-card__cta" type="button">Comprar boletos</button>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="movie-card__poster">
+          <span class="movie-card__badge">Estreno</span>
+        </div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">Rebelión en la granja</h3>
+          <p class="movie-card__meta">Animación · Todo público</p>
+          <div class="movie-card__showtimes">
+            <span class="showtime-pill">16:10</span>
+            <span class="showtime-pill">18:35</span>
+            <span class="showtime-pill">20:50</span>
+          </div>
+          <button class="movie-card__cta" type="button">Comprar boletos</button>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="movie-card__poster">
+          <span class="movie-card__badge">35º aniversario</span>
+        </div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">Terminator 2: El juicio final</h3>
+          <p class="movie-card__meta">Acción · Reestreno</p>
+          <div class="movie-card__showtimes">
+            <span class="showtime-pill">21:15</span>
+          </div>
+          <button class="movie-card__cta" type="button">Comprar boletos</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section" id="proximos">
+    <div class="section__head">
+      <h2>Preventa y próximos estrenos</h2>
+      <p>Asegura tu lugar antes del día del estreno</p>
+    </div>
+
+    <div class="upcoming-scroller">
+      <div class="upcoming-card">
+        <div class="upcoming-card__poster"></div>
+        <div class="upcoming-card__body">
+          <h3 class="upcoming-card__title">Avengers: Endgame Bonus</h3>
+          <span class="upcoming-card__date">24 de septiembre</span>
+        </div>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-card__poster"></div>
+        <div class="upcoming-card__body">
+          <h3 class="upcoming-card__title">Relajadas y muy peligrosas</h3>
+          <span class="upcoming-card__date">10 de septiembre</span>
+        </div>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-card__poster"></div>
+        <div class="upcoming-card__body">
+          <h3 class="upcoming-card__title">Don't Look Back in Anger</h3>
+          <span class="upcoming-card__date">10 de septiembre</span>
+        </div>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-card__poster"></div>
+        <div class="upcoming-card__body">
+          <h3 class="upcoming-card__title">Rápido y Furioso — 25 aniversario</h3>
+          <span class="upcoming-card__date">10 de septiembre</span>
+        </div>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-card__poster"></div>
+        <div class="upcoming-card__body">
+          <h3 class="upcoming-card__title">One Piece: La película</h3>
+          <span class="upcoming-card__date">10 de septiembre</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <p class="footer-brand__name">CINEMARK</p>
+      <p>La mejor experiencia de cine en El Salvador, con formatos 2D, 3D, 4D y butacas D-Box.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">x</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Programación</h3>
+      <ul>
+        <li><a href="#">Cartelera</a></li>
+        <li><a href="#">Próximamente</a></li>
+        <li><a href="#">Preventa</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Sobre Cinemark</h3>
+      <ul>
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Formatos y salas</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Publicidad y eventos</h3>
+      <ul>
+        <li><a href="#">Eventos privados</a></li>
+        <li><a href="#">Ventas empresariales</a></li>
+        <li><a href="#">Publicidad</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contáctenos</h3>
+      <ul>
+        <li><a href="#">Escríbenos</a></li>
+        <li><a href="#">Trabaja con nosotros</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>© 2026 Cinemark El Salvador. Todos los derechos reservados.</p>
+    <p>Proyecto académico de rediseño — no afiliado a Cinemark Holdings.</p>
+  </div>
+</footer>
+
+</body>
+</html>
