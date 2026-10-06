@@ -1,0 +1,794 @@
+/* ============================================================
+   BASE & RESET
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-red: #e50914;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-light: #b3b3b3;
+  --color-gray-border: #2d2d2d;
+  --feature-gradient: linear-gradient(149deg, #192247, #210e17);
+  --content-width: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   SHARED LAYOUT
+   ============================================================ */
+
+.section {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section__title {
+  color: var(--color-white);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.section__link {
+  color: var(--color-red);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.section__link:hover,
+.section__link:focus-visible {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   MAIN — CSS GRID MAESTRO
+   Este es el sistema principal de layout de TODO <main>.
+   ------------------------------------------------------------
+   display: grid:
+     Convierte <main> en un contenedor CSS Grid.
+
+   grid-template-areas:
+     Define las zonas donde se colocará cada sección.
+     En móvil cada zona ocupa una sola fila.
+
+   grid-template-columns:
+     En móvil usamos una sola columna para que el contenido
+     sea fácil de leer y navegar.
+
+   gap:
+     Crea separación uniforme entre todas las áreas principales.
+   ============================================================ */
+
+main {
+  display: grid;
+
+  /* El orden móvil es lineal: hero → search → cartelera →
+     features → próximos estrenos. */
+  grid-template-areas:
+    "hero"
+    "search"
+    "cartelera"
+    "features"
+    "proximos";
+
+  grid-template-columns: minmax(0, 1fr);
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+/* Asignación de cada elemento a su área del Grid maestro. */
+.hero {
+  grid-area: hero;
+}
+
+.quick-search {
+  grid-area: search;
+}
+
+.cartelera {
+  grid-area: cartelera;
+}
+
+.features {
+  grid-area: features;
+}
+
+.proximos {
+  grid-area: proximos;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  min-height: 48px;
+  padding: 12px 20px;
+  color: var(--color-white);
+  font-weight: 700;
+  text-align: center;
+  transition: transform 160ms ease, filter 160ms ease, background-color 160ms ease;
+}
+
+.btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background-color: var(--color-red);
+}
+
+.btn--translucent {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #808080;
+  font-size: 16px;
+  font-weight: 500;
+  padding-inline: 24px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid rgba(45, 45, 45, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.header__container {
+  width: min(100%, var(--content-width));
+  min-height: 72px;
+  margin-inline: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  color: var(--color-white);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.header__logo span {
+  color: var(--color-red);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.header__nav-link {
+  color: var(--color-gray-light);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header__nav-link--active,
+.header__nav-link:hover,
+.header__nav-link:focus-visible {
+  color: var(--color-white);
+}
+
+.header__nav-link--active {
+  font-weight: 700;
+}
+
+.header__btn-login {
+  flex-shrink: 0;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  min-height: min(90vh, 760px);
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 72px 24px;
+  text-align: center;
+
+  /* Fondo negro con degradado radial y profundidad vertical. */
+  background:
+    radial-gradient(circle at center, rgba(20, 20, 20, 0.6) 0%, rgba(0, 0, 0, 0.95) 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, #000000 100%);
+}
+
+.hero__content {
+  width: min(100%, 800px);
+}
+
+.hero__tagline {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-gray-light);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero__headline {
+  margin-bottom: 16px;
+  color: var(--color-white);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.hero__subheadline {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  color: var(--color-gray-light);
+  font-size: 18px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero__actions .btn--primary {
+  padding-inline: 24px;
+  font-size: 16px;
+}
+
+/* ============================================================
+   QUICK SEARCH
+   ============================================================ */
+
+.quick-search {
+  width: min(calc(100% - 48px), var(--content-width));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 16px;
+  align-items: end;
+  padding: 24px;
+  background-color: #0b0b0b;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 16px;
+}
+
+.quick-search__field {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.quick-search__label {
+  color: var(--color-gray-light);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.quick-search__select {
+  width: 100%;
+  min-height: 51px;
+  padding: 12px 16px;
+  appearance: auto;
+  background-color: #161616;
+  border: 1px solid #5a5a5a;
+  border-radius: 4px;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.quick-search__select option {
+  background-color: #161616;
+  color: var(--color-white);
+}
+
+.quick-search__btn {
+  min-height: 51px;
+  padding-inline: 24px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CARTELERA
+   ============================================================ */
+
+/* Grid interno de las seis películas. */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.movie-card {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+}
+
+.movie-card__poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, #2d2d2d 0%, #111111 100%);
+}
+
+.movie-card__poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.72) 100%);
+  pointer-events: none;
+}
+
+/* Diferenciación visual de cada póster sin depender de imágenes externas. */
+.movie-card__poster--heladero {
+  background: linear-gradient(160deg, #282828 0%, #73151b 52%, #080808 100%);
+}
+
+.movie-card__poster--colony {
+  background: linear-gradient(160deg, #354356 0%, #1b2631 45%, #090909 100%);
+}
+
+.movie-card__poster--mamut {
+  background: linear-gradient(160deg, #8f7a55 0%, #2b4034 45%, #080808 100%);
+}
+
+.movie-card__poster--granja {
+  background: linear-gradient(160deg, #6a593e 0%, #2f3926 50%, #080808 100%);
+}
+
+.movie-card__poster--terminator {
+  background: linear-gradient(160deg, #48515a 0%, #1f1f1f 42%, #66070c 100%);
+}
+
+.movie-card__poster--avengers,
+.movie-card__poster--avengers-upcoming {
+  background: linear-gradient(160deg, #384b75 0%, #211b43 50%, #590914 100%);
+}
+
+.movie-card__poster--relajadas {
+  background: linear-gradient(160deg, #6b5362 0%, #25252d 45%, #090909 100%);
+}
+
+.movie-card__poster--lookback {
+  background: linear-gradient(160deg, #78694f 0%, #29251f 45%, #090909 100%);
+}
+
+.movie-card__poster--rapido {
+  background: linear-gradient(160deg, #5b3030 0%, #202020 48%, #080808 100%);
+}
+
+.movie-card__poster--onepiece {
+  background: linear-gradient(160deg, #2e6181 0%, #293b5a 48%, #090909 100%);
+}
+
+.movie-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.movie-card__title {
+  height: 42px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.movie-card__meta,
+.movie-card__date {
+  color: var(--color-gray-light);
+  font-size: 13px;
+}
+
+.movie-card__meta {
+  margin-bottom: 12px;
+}
+
+.movie-card__date {
+  color: var(--color-red);
+  font-weight: 700;
+}
+
+.movie-card__btn {
+  align-self: end;
+  width: 100%;
+  margin-top: 12px;
+  padding-inline: 10px;
+  font-size: 13px;
+}
+
+/* ============================================================
+   CARACTERÍSTICAS
+   ============================================================ */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.feature-card {
+  min-height: 100%;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--feature-gradient);
+}
+
+.feature-card__title {
+  margin-bottom: 12px;
+  color: var(--color-white);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.feature-card__body {
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   PRÓXIMOS ESTRENOS
+   ============================================================ */
+
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid var(--color-gray-border);
+  background-color: var(--color-black);
+  padding: 48px 0 24px;
+}
+
+.footer__container {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.footer__col {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.footer__title {
+  margin-bottom: 4px;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer__link {
+  color: var(--color-gray-light);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--color-white);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-gray-border);
+  color: #808080;
+  font-size: 13px;
+}
+
+/* ============================================================
+   TABLET — hasta 1024 px
+   ------------------------------------------------------------
+   El main sigue siendo CSS Grid y cambia a dos columnas para
+   las áreas inferiores.
+
+   grid-template-areas:
+     Mantiene hero, search y cartelera ocupando todo el ancho,
+     mientras features y proximos pasan a dos columnas.
+
+   grid-template-columns:
+     Divide el espacio disponible en dos columnas iguales.
+
+   gap:
+     Mantiene la separación uniforme entre las áreas.
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-areas:
+      "hero hero"
+      "search search"
+      "cartelera cartelera"
+      "features proximos";
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+
+  .quick-search {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quick-search__btn {
+    grid-column: 1 / -1;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .features-grid,
+  .upcoming-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   ESCRITORIO — desde 900 px
+   ------------------------------------------------------------
+   Layout asimétrico:
+     hero, search y cartelera siguen a ancho completo;
+     features y proximos ocupan columnas con proporción 1.4fr/1fr.
+
+   grid-template-areas:
+     Define explícitamente qué área ocupa cada sección.
+
+   grid-template-columns:
+     1.4fr entrega más espacio a "features" y 1fr a "proximos".
+
+   grid-area:
+     Cada sección ya declara su zona en las reglas base.
+
+   gap:
+     Separa las columnas y filas sin márgenes manuales entre áreas.
+   ============================================================ */
+
+@media (min-width: 900px) {
+  main {
+    grid-template-areas:
+      "hero hero"
+      "search search"
+      "cartelera cartelera"
+      "features proximos";
+
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px 32px;
+  }
+}
+
+/* ============================================================
+   MÓVIL — hasta 640 px
+   ------------------------------------------------------------
+   main vuelve a una sola columna.
+
+   grid-template-areas:
+     Apila todas las secciones verticalmente.
+
+   grid-template-columns:
+     Una sola columna ocupa todo el ancho disponible.
+
+   gap:
+     Reduce la separación para aprovechar mejor el espacio móvil.
+   ============================================================ */
+
+@media (max-width: 640px) {
+  main {
+    grid-template-areas:
+      "hero"
+      "search"
+      "cartelera"
+      "features"
+      "proximos";
+
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .header__container {
+    min-height: auto;
+    padding-block: 12px;
+    gap: 12px;
+  }
+
+  .header__nav {
+    gap: 12px;
+  }
+
+  .header__nav-link {
+    font-size: 12px;
+  }
+
+  .header__btn-login {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 56px 20px;
+  }
+
+  .hero__subheadline {
+    font-size: 16px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 360px);
+    margin-inline: auto;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .quick-search {
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .quick-search__btn {
+    grid-column: auto;
+  }
+
+  .section {
+    padding-inline: 16px;
+  }
+
+  .section__header {
+    align-items: flex-start;
+  }
+
+  .section__title {
+    font-size: 21px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .features-grid,
+  .upcoming-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   REDUCCIÓN DE MOVIMIENTO
+   Mejora accesibilidad para usuarios que prefieren menos
+   animación.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn {
+    transition: none;
+  }
+}

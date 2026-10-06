@@ -1,0 +1,552 @@
+/* === BASE & RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === LAYOUT === */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+/* === BUTTONS === */
+.btn {
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--primary {
+  background-color: #e50914;
+  color: #ffffff;
+}
+
+/* === HEADER === */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.header__logo span {
+  color: #e50914;
+}
+
+.header__nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header__nav-link {
+  font-size: 14px;
+  color: #b3b3b3;
+  font-weight: 500;
+}
+
+.header__nav-link--active,
+.header__nav-link:hover {
+  color: #ffffff;
+}
+
+.header__btn-login {
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* === HERO DULCERIA === */
+.hero-dulceria {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-dulceria__container {
+  max-width: 800px;
+}
+
+.hero-dulceria__tag {
+  color: #e50914;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.hero-dulceria__headline {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.hero-dulceria__subheadline {
+  font-size: 20px;
+  color: #b3b3b3;
+}
+
+/* === CATEGORY PILLS === */
+.pills-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.pill {
+  background-color: #2d2d2d;
+  color: #b3b3b3;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pill--active {
+  background-color: #e50914;
+  color: #ffffff;
+}
+
+/* === FEATURED COMBO === */
+.featured-combo {
+  background: linear-gradient(149deg, #192247, #210e17);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.featured-combo__title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.featured-combo__desc {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.featured-combo__btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.featured-combo__price-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.featured-combo__price {
+  color: #e50914;
+  font-size: 56px;
+  font-weight: 900;
+}
+
+.featured-combo__badge {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+/* === PRODUCT GRID === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background-color: #000000;
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product-card__img {
+  aspect-ratio: 1/1;
+  background: linear-gradient(180deg, #1f1f1f 0%, #0a0a0a 100%);
+}
+
+.product-card__content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.product-card__desc {
+  font-size: 13px;
+  color: #b3b3b3;
+  min-height: 38px;
+}
+
+.product-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.product-card__price {
+  color: #e50914;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.product-card__btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* === INFO BANNER === */
+.info-banner {
+  background-color: #e50914;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.info-banner__title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.info-banner__desc {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.info-banner__btn {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #000000;
+  border-top: 1px solid #2d2d2d;
+  padding: 48px 0 24px 0;
+}
+
+.footer__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.footer__link {
+  color: #b3b3b3;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer__link:hover {
+  color: #ffffff;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #808080;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ============================================================
+   ANIMACIONES — Dulcería
+   Tipos: entrada, hover, continua, y de acento
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1) ENTRADA DE TARJETAS DE PRODUCTO
+   Combina opacidad + desplazamiento + escala
+   Efecto "pop" con easing elástico
+------------------------------------------------------------ */
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.product-card {
+  animation: cardEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Delays escalonados: cada tarjeta aparece 0.07s después de la anterior */
+.product-card:nth-child(1)  { animation-delay: 0.05s; }
+.product-card:nth-child(2)  { animation-delay: 0.12s; }
+.product-card:nth-child(3)  { animation-delay: 0.19s; }
+.product-card:nth-child(4)  { animation-delay: 0.26s; }
+.product-card:nth-child(5)  { animation-delay: 0.33s; }
+.product-card:nth-child(6)  { animation-delay: 0.40s; }
+.product-card:nth-child(7)  { animation-delay: 0.47s; }
+.product-card:nth-child(8)  { animation-delay: 0.54s; }
+.product-card:nth-child(9)  { animation-delay: 0.61s; }
+.product-card:nth-child(10) { animation-delay: 0.68s; }
+.product-card:nth-child(11) { animation-delay: 0.75s; }
+.product-card:nth-child(12) { animation-delay: 0.82s; }
+
+/* ------------------------------------------------------------
+   2) HOVER DE TARJETA
+   Eleva, escala, inclina ligeramente y agrega brillo rojo
+------------------------------------------------------------ */
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(-0.6deg);
+  border-color: #e50914;
+  box-shadow: 0 18px 40px rgba(229, 9, 20, 0.28);
+}
+
+/* La imagen interna hace un zoom suave al hacer hover */
+.product-card__img {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.4s ease;
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.12);
+  filter: brightness(1.15);
+}
+
+/* El botón "+ Agregar" se ilumina al hacer hover sobre la tarjeta */
+.product-card:hover .product-card__btn {
+  background-color: #ff1a25;
+  box-shadow: 0 0 16px rgba(229, 9, 20, 0.6);
+}
+
+.product-card__btn {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ------------------------------------------------------------
+   3) PRECIO DEL COMBO DESTACADO — Latido luminoso
+   Combina scale + text-shadow rojo intermitente
+------------------------------------------------------------ */
+@keyframes priceHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 8px rgba(229, 9, 20, 0.3);
+  }
+  50% {
+    transform: scale(1.06);
+    text-shadow: 0 0 28px rgba(229, 9, 20, 1);
+  }
+}
+
+.featured-combo__price {
+  display: inline-block;
+  animation: priceHeartbeat 2.2s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------
+   4) BADGE "AHORRAS $X" — Rebote tipo corazón
+------------------------------------------------------------ */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  20%      { transform: scale(1.15); }
+  40%      { transform: scale(1); }
+  60%      { transform: scale(1.10); }
+  80%      { transform: scale(1); }
+}
+
+.featured-combo__badge {
+  display: inline-block;
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------
+   5) HERO DE DULCERÍA — Aparición de título con tracking
+   La letra nace "apretada" y se expande mientras aparece
+------------------------------------------------------------ */
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    letter-spacing: -6px;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0;
+    filter: blur(0);
+  }
+}
+
+.hero-dulceria__headline {
+  animation: titleReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-dulceria__tag {
+  animation: titleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero-dulceria__subheadline {
+  animation: titleReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+/* ------------------------------------------------------------
+   6) BANNER DE LEALTAD — Deslizamiento desde abajo
+------------------------------------------------------------ */
+@keyframes slideUpBanner {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-banner {
+  animation: slideUpBanner 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+/* ------------------------------------------------------------
+   7) PILL ACTIVA — Rebote sutil al cargar
+------------------------------------------------------------ */
+@keyframes pillPop {
+  0%   { transform: scale(0.85); }
+  60%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.pill--active {
+  animation: pillPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-dulceria__headline {
+    font-size: 36px;
+  }
+  .featured-combo,
+  .info-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .featured-combo__price-box {
+    align-items: flex-start;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
