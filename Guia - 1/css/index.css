@@ -1,79 +1,296 @@
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            max-width: 600px;
-            margin: 30px auto;
-        }
-        li {
-            background: white;
-            margin: 12px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-        li:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        a {
-            text-decoration: none;
-            color: #2980b9;
-            font-weight: bold;
-            font-size: 1.2em;
-            display: block;
-        }
-        .descripcion {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #aaa;
-        }
-        .seccion {
-            margin-top: 40px;
-            border-top: 2px solid #ccc;
-            padding-top: 20px;
-        }
-        .seccion h2 {
-            text-align: center;
-            color: #2c3e50;
-        }
-        /* Estilos para la tabla de análisis */
-        .tabla-analisis {
-            width: 90%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .tabla-analisis th, .tabla-analisis td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        .tabla-analisis th {
-            background-color: #2980b9;
-            color: white;
-        }
-        .tabla-analisis td code {
-            background-color: #f0f0f0;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
+/* ==========================================================
+   Portafolio de Desarrollo Web · Hoja de estilos principal
+   ========================================================== */
+
+/* --- Variables globales --- */
+:root {
+    --bg: #eef3f8;
+    --surface: #ffffff;
+    --card-bg: #f8fafc;
+    --ink: #22303f;
+    --muted: #667085;
+    --brand: #2980b9;
+    --brand-dark: #1f6391;
+    --line: #e3eaf1;
+    --radius: 16px;
+    --shadow-sm: 0 1px 2px rgba(16, 24, 40, .06);
+    --shadow-md: 0 12px 26px rgba(16, 24, 40, .12);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #e7f1f9 0%, #f5f8fb 300px, #f5f8fb 100%);
+    color: var(--ink);
+    margin: 0;
+    padding: 32px 18px 60px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Encabezado de la página --- */
+.page-header {
+    max-width: 1180px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+    letter-spacing: -.02em;
+    color: #2c3e50;
+}
+
+.carnet {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 15px;
+    border-radius: 999px;
+    background: #e2eef8;
+    color: var(--brand-dark);
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+/* --- Índice rápido de guías --- */
+.indice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 1180px;
+    margin: 0 auto 32px;
+}
+
+.indice a {
+    padding: 7px 16px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--brand-dark);
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.indice a:hover,
+.indice a:focus-visible {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+    outline: none;
+}
+
+/* --- Sección de cada guía --- */
+.guia {
+    max-width: 1180px;
+    margin: 0 auto 22px;
+    padding: 18px 18px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    scroll-margin-top: 16px;
+}
+
+.guia-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+    border-bottom: 1px dashed var(--line);
+}
+
+.guia-num {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3ba0d8, var(--brand));
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    box-shadow: 0 6px 14px rgba(41, 128, 185, .3);
+}
+
+.guia-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.guia-sub {
+    margin: 2px 0 0;
+    font-size: .82rem;
+    color: var(--muted);
+}
+
+/* --- Rejilla de cards (todas en fila, se ajustan solas) --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s ease, box-shadow .25s ease,
+                border-color .25s ease, background .25s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+    transform: translateY(-4px);
+    background: #fff;
+    border-color: #cfe3f2;
+    box-shadow: var(--shadow-md);
+    outline: none;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--brand-dark);
+    line-height: 1.3;
+}
+
+.card p {
+    margin: 0;
+    font-size: .85rem;
+    color: var(--muted);
+}
+
+.card code {
+    background: #eaf1f7;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: .9em;
+}
+
+/* --- Etiquetas de categoría --- */
+.tag {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.tag-ejercicio      { background: #e7f1fa; color: #1f6391; }
+.tag-complementario { background: #e9f7ef; color: #1e7a4d; }
+.tag-reto           { background: #fdf1e3; color: #a25a12; }
+.tag-video          { background: #fdeaea; color: #b02a2a; }
+
+/* --- Análisis de correspondencia (desplegable) --- */
+.analisis {
+    margin-top: 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.analisis summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 18px;
+    cursor: pointer;
+    background: #f1f8fd;
+    color: var(--brand-dark);
+    font-weight: 700;
+    font-size: .92rem;
+    list-style: none;
+}
+
+.analisis summary::-webkit-details-marker { display: none; }
+
+.analisis summary::after {
+    content: "▾";
+    font-size: .9rem;
+    transition: transform .25s ease;
+}
+
+.analisis[open] summary::after { transform: rotate(180deg); }
+
+.tabla-wrap {
+    overflow-x: auto;
+    padding: 14px;
+}
+
+.tabla-analisis {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+}
+
+.tabla-analisis th,
+.tabla-analisis td {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.tabla-analisis thead th {
+    background: var(--brand);
+    color: #fff;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.tabla-analisis tbody tr:nth-child(even) { background: #f8fafc; }
+
+.tabla-analisis code {
+    background: #eef3f8;
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-size: .85em;
+    color: var(--brand-dark);
+}
+
+/* --- Pie de página --- */
+footer {
+    text-align: center;
+    margin-top: 42px;
+    color: #98a2b3;
+    font-size: .85rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    body { padding: 22px 12px 45px; }
+    .guia { padding: 14px 14px 18px; }
+    .guia-header { gap: 10px; }
+    .guia-num { width: 36px; height: 36px; font-size: 1rem; }
+    .cards { grid-template-columns: 1fr; }
+}
+
+/* --- Accesibilidad: respeta "reducir movimiento" --- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}

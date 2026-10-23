@@ -4,195 +4,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía 1 - Desarrollo Web</title>
+    <title>Portafolio de Desarrollo Web - 20255692</title>
     <link rel="stylesheet" href="Guia - 1/css/index.css">
 </head>
 
 <body>
-    <h1>Guía 1 - Desarrollo Web</h1>
-    <p style="text-align:center;">Número de carnet: 20255692</p>
+    <header class="page-header">
+        <h1>Portafolio de Desarrollo Web</h1>
+        <p class="carnet">Carnet: 20255692</p>
+    </header>
 
-    <ul>
-        <li>
-            <a href="Guia - 1/estilos_embebidos.html">Ejercicio 1: Estilos embebidos</a>
-            <div class="descripcion">Uso de estilos CSS directamente en las etiquetas HTML.</div>
-        </li>
-        <li>
-            <a href="Guia - 1/ejemplo2.html">Ejercicio 2: Usando la etiqueta style</a>
-            <div class="descripcion">Definición de estilos en el head del documento.</div>
-        </li>
-        <li>
-            <a href="Guia - 1/paises.html">Ejercicio 3: Centroamérica</a>
-            <div class="descripcion">Página sobre países centroamericanos con hoja de estilo externa.</div>
-        </li>
-    </ul>
+    <nav class="indice" aria-label="Índice de guías">
+        <a href="#guia-1">Guía 1</a>
+        <a href="#guia-2">Guía 2</a>
+        <a href="#guia-3">Guía 3</a>
+        <a href="#guia-5">Guía 5</a>
+    </nav>
 
-    <div class="seccion">
-        <h2>Ejercicio Complementario</h2>
-        <ul>
-            <li>
-                <a href="Guia - 1/programa.html">Mi programa favorito</a>
-                <div class="descripcion">Página con información sobre una serie/película usando clases e IDs.</div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="seccion">
-        <h2>Reto IA</h2>
-        <ul>
-            <li>
-                <a href="Guia - 1/reto-ia-generico/index.html">Resultado prompt genérico</a>
-                <div class="descripcion">Resultado de la IA sin contexto adicional.</div>
-            </li>
-            <li>
-                <a href="Guia - 1/reto-ia-elaborado/index.html">Resultado prompt elaborado</a>
-                <div class="descripcion">Resultado de la IA con contexto detallado.</div>
-            </li>
-            <li>
-                <a href="https://youtu.be/z7qLWqopVLY" target="_blank">Video explicativo del Reto IA</a>
-                <div class="descripcion">Enlace al video de YouTube</div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="seccion">
-        <h2>Análisis de Correspondencia</h2>
-        <table class="tabla-analisis">
-            <thead>
-                <tr>
-                    <th>Contenido ya estudiado en el curso</th>
-                    <th>Contenido nuevo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>.clase</code> (selector de clase)</td>
-                    <td><code>display: grid;</code> – Organiza las películas en columnas automáticas.</td>
-                </tr>
-                <tr>
-                    <td><code>background-color</code> y <code>color</code></td>
-                    <td><code>@media (max-width: 768px)</code> – Cambia el diseño para móviles.</td>
-                </tr>
-                <tr>
-                    <td><code>font-family</code> y <code>text-align</code></td>
-                    <td><code>transition: transform 0.3s;</code> – Efecto de elevación al pasar el mouse.</td>
-                </tr>
-                <tr>
-                    <td><code>#id</code> (selector de ID)</td>
-                    <td><code>box-shadow: 0 4px 8px rgba(0,0,0,0.2);</code> – Sombra para profundidad.</td>
-                </tr>
-                <tr>
-                    <td>Enlaces <code>a</code> y <code>:hover</code></td>
-                    <td><code>border-radius: 12px;</code> – Esquinas redondeadas en botones y tarjetas.</td>
-                </tr>
-                <tr>
-                    <td><code>font-weight: bold</code></td>
-                    <td><code>flex-wrap: wrap;</code> – Permite que los elementos se ajusten en varias líneas.</td>
-                </tr>
-                <tr>
-                    <td>Selectores de etiqueta (<code>html</code>, <code>body</code>)</td>
-                    <td>
-                        <code>:root</code> – Pseudoclase que selecciona el elemento raíz (<code>&lt;html&gt;</code>).
-                        Se usa para declarar <strong>variables CSS globales</strong> (ej:
-                        <code>--color-principal</code>)
-                        que se reutilizan en todo el documento mediante <code>var()</code>, facilitando cambios
-                        globales.
-                    </td>
-                </tr>
-                <tr>
-                    <td><code>@media</code> básico (para tamaños de pantalla) y selector universal <code>*</code></td>
-                    <td>
-                        <code>@media (prefers-reduced-motion: reduce)</code> – Detecta si el usuario ha activado
-                        la opción de "reducir movimiento" en su sistema operativo. Su función es <strong>desactivar
-                            animaciones y transiciones</strong> (ej: <code>scroll-behavior: auto</code> y
-                        <code>transition: none !important</code>) para mejorar la accesibilidad de personas con
-                        mareos, vértigo o epilepsia.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h1>Guía 2 - Desarrollo Web</h1>
-
-    <ul>
-        <li>
-            <a href="20255692_Guia2/pelicula.html">Ejercicio 1: Altamar</a>
-            <div class="descripcion">Página de película usando selectores avanzados, pseudo-clases y pseudo-elementos.
+    <!-- ===================== GUÍA 1 ===================== -->
+    <section class="guia" id="guia-1">
+        <header class="guia-header">
+            <span class="guia-num">1</span>
+            <div>
+                <h2>Guía 1 - Desarrollo Web</h2>
+                <p class="guia-sub">Estilos embebidos, etiqueta &lt;style&gt; y hojas de estilo externas</p>
             </div>
-        </li>
-        <li>
-            <a href="20255692_Guia2/tablero.html">Ejercicio 2: Tablero de Damas</a>
-            <div class="descripcion">Tablero 8×8 construido con flexbox y <code>:nth-child()</code> sin clases en el
-                HTML.</div>
-        </li>
-    </ul>
+        </header>
 
-    <div class="seccion">
-        <h2>Ejercicio Complementario</h2>
-        <ul>
-            <li>
-                <a href="20255692_Guia2/biografia.html">Mi Biografía</a>
-                <div class="descripcion">Página personal con etiquetas semánticas, Google Fonts y hoja de estilo
-                    externa.</div>
-            </li>
-        </ul>
-    </div>
+        <div class="cards">
+            <a class="card" href="Guia - 1/estilos_embebidos.html">
+                <span class="tag tag-ejercicio">Ejercicio 1</span>
+                <h3>Estilos embebidos</h3>
+                <p>Uso de estilos CSS directamente en las etiquetas HTML.</p>
+            </a>
 
-    <div class="seccion">
-        <h2>Reto IA</h2>
-        <ul>
-            <li>
-                <a href="20255692_Guia2/reto-ia/index.html">Rediseño con IA de reto con IA de Guia 1</a>
-                <div class="descripcion">Página de Cinemark El Salvador, de la IA con contexto detallado.</div>
-            </li>
-            <li>
-                <a href="https://youtu.be/wcQAvr9w9b8?si=I7bjC7SLr3tsghO4" target="_blank">Video explicativo del Reto IA</a>
-                <div class="descripcion">Enlace al video de YouTube</div>
-            </li>
-        </ul>
-    </div>
+            <a class="card" href="Guia - 1/ejemplo2.html">
+                <span class="tag tag-ejercicio">Ejercicio 2</span>
+                <h3>Usando la etiqueta style</h3>
+                <p>Definición de estilos en el head del documento.</p>
+            </a>
 
-    <h1>Guía 3 - Desarrollo Web</h1>
+            <a class="card" href="Guia - 1/paises.html">
+                <span class="tag tag-ejercicio">Ejercicio 3</span>
+                <h3>Centroamérica</h3>
+                <p>Página sobre países centroamericanos con hoja de estilo externa.</p>
+            </a>
 
-    <ul>
-        <li>
-            <a href="20255692_Guia3/ejemplo1/index.html">Ejemplo 1: Maravillas del Mundo</a>
-            <div class="descripcion">Galería flexible con Flexbox, posicionamiento relativo, absoluto, sticky y fixed,
-                propiedades <code>overflow</code>, <code>z-index</code> y <code>object-fit</code>.</div>
-        </li>
-        <li>
-            <a href="20255692_Guia3/ejemplo2/index.html">Ejemplo 2: Compañía Miau</a>
-            <div class="descripcion">Menú lateral que se abre y se cierra sin JavaScript usando un checkbox oculto, la
-                pseudoclase <code>:checked</code> y los combinadores <code>+</code> y <code>~</code>.</div>
-        </li>
-    </ul>
+            <a class="card" href="Guia - 1/programa.html">
+                <span class="tag tag-complementario">Complementario</span>
+                <h3>Mi programa favorito</h3>
+                <p>Página con información sobre una serie/película usando clases e IDs.</p>
+            </a>
 
-    <div class="seccion">
-        <h2>Ejercicio Complementario</h2>
-        <ul>
-            <li>
-                <a href="20255692_Guia3/ejercicio/ejercicio.html">Cartas apiladas con posicionamiento y z-index</a>
-                <div class="descripcion">Dos resultados usando <code>position: absolute</code> y distintos órdenes de
-                    <code>z-index</code> para controlar qué carta queda al frente.</div>
-            </li>
-        </ul>
-    </div>
+            <a class="card" href="Guia - 1/reto-ia-generico/index.html">
+                <span class="tag tag-reto">Reto IA</span>
+                <h3>Resultado prompt genérico</h3>
+                <p>Resultado de la IA sin contexto adicional.</p>
+            </a>
 
-    <div class="seccion">
-        <h2>Reto IA</h2>
-        <ul>
-            <li>
-                <a href="20255692_Guia3/reto-ia/index.html">Inicio del sitio salvadoreño con CSS Grid</a>
-                <div class="descripcion">Nueva versión de la página de inicio construida con CSS Grid y
-                    <code>grid-template-areas</code>, conservando la temática e identidad visual del sitio.</div>
-            </li>
-            <li>
-                <a href="https://youtu.be/aKHvZEUKjtE" target="_blank">Video explicativo del Reto IA</a>
-                <div class="descripcion">Enlace al video de YouTube</div>
-            </li>
-        </ul>
-    </div>
+            <a class="card" href="Guia - 1/reto-ia-elaborado/index.html">
+                <span class="tag tag-reto">Reto IA</span>
+                <h3>Resultado prompt elaborado</h3>
+                <p>Resultado de la IA con contexto detallado.</p>
+            </a>
+
+            <a class="card" href="https://youtu.be/z7qLWqopVLY" target="_blank" rel="noopener">
+                <span class="tag tag-video">Video</span>
+                <h3>Video explicativo del Reto IA</h3>
+                <p>Enlace al video de YouTube.</p>
+            </a>
+        </div>
+
+        <details class="analisis">
+            <summary>Análisis de correspondencia (contenido estudiado vs. nuevo)</summary>
+            <div class="tabla-wrap">
+                <table class="tabla-analisis">
+                    <thead>
+                        <tr>
+                            <th>Contenido ya estudiado en el curso</th>
+                            <th>Contenido nuevo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.clase</code> (selector de clase)</td>
+                            <td><code>display: grid;</code> – Organiza las películas en columnas automáticas.</td>
+                        </tr>
+                        <tr>
+                            <td><code>background-color</code> y <code>color</code></td>
+                            <td><code>@media (max-width: 768px)</code> – Cambia el diseño para móviles.</td>
+                        </tr>
+                        <tr>
+                            <td><code>font-family</code> y <code>text-align</code></td>
+                            <td><code>transition: transform 0.3s;</code> – Efecto de elevación al pasar el mouse.</td>
+                        </tr>
+                        <tr>
+                            <td><code>#id</code> (selector de ID)</td>
+                            <td><code>box-shadow: 0 4px 8px rgba(0,0,0,0.2);</code> – Sombra para profundidad.</td>
+                        </tr>
+                        <tr>
+                            <td>Enlaces <code>a</code> y <code>:hover</code></td>
+                            <td><code>border-radius: 12px;</code> – Esquinas redondeadas en botones y tarjetas.</td>
+                        </tr>
+                        <tr>
+                            <td><code>font-weight: bold</code></td>
+                            <td><code>flex-wrap: wrap;</code> – Permite que los elementos se ajusten en varias líneas.</td>
+                        </tr>
+                        <tr>
+                            <td>Selectores de etiqueta (<code>html</code>, <code>body</code>)</td>
+                            <td>
+                                <code>:root</code> – Pseudoclase que selecciona el elemento raíz (<code>&lt;html&gt;</code>).
+                                Se usa para declarar <strong>variables CSS globales</strong> (ej:
+                                <code>--color-principal</code>) que se reutilizan en todo el documento mediante
+                                <code>var()</code>, facilitando cambios globales.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>@media</code> básico (para tamaños de pantalla) y selector universal <code>*</code></td>
+                            <td>
+                                <code>@media (prefers-reduced-motion: reduce)</code> – Detecta si el usuario ha activado
+                                la opción de "reducir movimiento" en su sistema operativo. Su función es
+                                <strong>desactivar animaciones y transiciones</strong> (ej: <code>scroll-behavior: auto</code>
+                                y <code>transition: none !important</code>) para mejorar la accesibilidad de personas con
+                                mareos, vértigo o epilepsia.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </section>
+
+    <!-- ===================== GUÍA 2 ===================== -->
+    <section class="guia" id="guia-2">
+        <header class="guia-header">
+            <span class="guia-num">2</span>
+            <div>
+                <h2>Guía 2 - Desarrollo Web</h2>
+                <p class="guia-sub">Selectores avanzados, pseudo-clases, pseudo-elementos y flexbox</p>
+            </div>
+        </header>
+
+        <div class="cards">
+            <a class="card" href="20255692_Guia2/pelicula.html">
+                <span class="tag tag-ejercicio">Ejercicio 1</span>
+                <h3>Altamar</h3>
+                <p>Página de película usando selectores avanzados, pseudo-clases y pseudo-elementos.</p>
+            </a>
+
+            <a class="card" href="20255692_Guia2/tablero.html">
+                <span class="tag tag-ejercicio">Ejercicio 2</span>
+                <h3>Tablero de Damas</h3>
+                <p>Tablero 8×8 construido con flexbox y <code>:nth-child()</code> sin clases en el HTML.</p>
+            </a>
+
+            <a class="card" href="20255692_Guia2/biografia.html">
+                <span class="tag tag-complementario">Complementario</span>
+                <h3>Mi Biografía</h3>
+                <p>Página personal con etiquetas semánticas, Google Fonts y hoja de estilo externa.</p>
+            </a>
+
+            <a class="card" href="20255692_Guia2/reto-ia/index.html">
+                <span class="tag tag-reto">Reto IA</span>
+                <h3>Rediseño con IA</h3>
+                <p>Página de Cinemark El Salvador, de la IA con contexto detallado.</p>
+            </a>
+
+            <a class="card" href="https://youtu.be/wcQAvr9w9b8?si=I7bjC7SLr3tsghO4" target="_blank" rel="noopener">
+                <span class="tag tag-video">Video</span>
+                <h3>Video explicativo del Reto IA</h3>
+                <p>Enlace al video de YouTube.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== GUÍA 3 ===================== -->
+    <section class="guia" id="guia-3">
+        <header class="guia-header">
+            <span class="guia-num">3</span>
+            <div>
+                <h2>Guía 3 - Desarrollo Web</h2>
+                <p class="guia-sub">Posicionamiento, z-index, overflow y menús sin JavaScript</p>
+            </div>
+        </header>
+
+        <div class="cards">
+            <a class="card" href="20255692_Guia3/ejemplo1/index.html">
+                <span class="tag tag-ejercicio">Ejemplo 1</span>
+                <h3>Maravillas del Mundo</h3>
+                <p>Galería flexible con Flexbox, posicionamiento relativo, absoluto, sticky y fixed, propiedades
+                    <code>overflow</code>, <code>z-index</code> y <code>object-fit</code>.</p>
+            </a>
+
+            <a class="card" href="20255692_Guia3/ejemplo2/index.html">
+                <span class="tag tag-ejercicio">Ejemplo 2</span>
+                <h3>Compañía Miau</h3>
+                <p>Menú lateral que se abre y se cierra sin JavaScript usando un checkbox oculto, la pseudoclase
+                    <code>:checked</code> y los combinadores <code>+</code> y <code>~</code>.</p>
+            </a>
+
+            <a class="card" href="20255692_Guia3/ejercicio/ejercicio.html">
+                <span class="tag tag-complementario">Complementario</span>
+                <h3>Cartas apiladas</h3>
+                <p>Dos resultados usando <code>position: absolute</code> y distintos órdenes de <code>z-index</code>
+                    para controlar qué carta queda al frente.</p>
+            </a>
+
+            <a class="card" href="20255692_Guia3/reto-ia/index.html">
+                <span class="tag tag-reto">Reto IA</span>
+                <h3>Inicio con CSS Grid</h3>
+                <p>Nueva versión de la página de inicio construida con CSS Grid y <code>grid-template-areas</code>,
+                    conservando la identidad visual del sitio.</p>
+            </a>
+
+            <a class="card" href="https://youtu.be/aKHvZEUKjtE" target="_blank" rel="noopener">
+                <span class="tag tag-video">Video</span>
+                <h3>Video explicativo del Reto IA</h3>
+                <p>Enlace al video de YouTube.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== GUÍA 5 ===================== -->
+    <section class="guia" id="guia-5">
+        <header class="guia-header">
+            <span class="guia-num">5</span>
+            <div>
+                <h2>Guía 5 - Desarrollo Web</h2>
+                <p class="guia-sub">Introducción a JavaScript</p>
+            </div>
+        </header>
+
+        <div class="cards">
+            <a class="card" href="20255692_Guia5/index.html">
+                <span class="tag tag-ejercicio">Ejercicio</span>
+                <h3>Página inicial de la Guía 5</h3>
+                <p>Primera página de la guía 5 con JavaScript.</p>
+            </a>
+        </div>
+    </section>
 
     <footer>
         <p>© 2025 - Todos los derechos reservados</p>
