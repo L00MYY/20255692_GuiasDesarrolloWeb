@@ -3,7 +3,6 @@
 // ==========================================================
 const formulario = document.forms["frmRegistro"];
 const btnRegistro = formulario.elements["btnRegistro"];
-const btnRecorrer = document.getElementById("idBtnRecorrer"); 
 
 // MODAL BOOTSTRAP
 const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
@@ -268,11 +267,8 @@ const validarFormulario = function () {
 
 
 btnRegistro.onclick = () => {
-  validarFormulario();
+  const datos = validarFormulario();
+  if (datos) {
+    recorrerFormulario(datos);
+  }
 };
-
-if (btnRecorrer) {
-  btnRecorrer.onclick = () => {
-    recorrerFormulario();
-  };
-}
