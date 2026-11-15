@@ -3,12 +3,12 @@
 // ==========================================================
 const formulario = document.forms["frmRegistro"];
 const btnRegistro = formulario.elements["btnRegistro"];
+const btnRecorrer = document.getElementById("idBtnRecorrer"); 
 
 // MODAL BOOTSTRAP
 const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
 const bodyModal = document.getElementById("idBodyModal");
 
-// Helper para mostrar contenido en el modal (sin innerHTML)
 const mostrarEnModal = function (contenido) {
   bodyModal.replaceChildren(contenido);
   modal.show();
@@ -265,10 +265,15 @@ const validarFormulario = function () {
   });
 };
 
-
+// ==========================================================
+// EVENTOS
+// ==========================================================
 btnRegistro.onclick = () => {
-  const datos = validarFormulario();
-  if (datos) {
-    recorrerFormulario(datos);
-  }
+  validarFormulario();
 };
+
+if (btnRecorrer) {
+  btnRecorrer.onclick = () => {
+    recorrerFormulario();
+  };
+}
