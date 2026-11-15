@@ -4,7 +4,7 @@ const newForm = document.getElementById("idNewForm");
 
 // ACCEDIENDO A LA REFERENCIA DE BOTONES
 const buttonCrear = document.getElementById("idBtnCrear");
-const buttonAddElemento = document.getElementById("idBtnAddElemento");
+const buttonAddElemento = document.getElementById("idBtnAddElement");
 
 // ACCEDIENDO AL VALOR DEL SELECT PARA DETERMINAR EL TIPO DE ELEMENTO A CREAR
 const cmbElemento = document.getElementById("idCmbElemento");

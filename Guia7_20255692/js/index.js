@@ -5,8 +5,6 @@ const buttonSpan = document.getElementById("idBtnSpan");
 const buttonP = document.getElementById("idBtnP");
 const buttonDiv = document.getElementById("idBtnDiv");
 const buttonButton = document.getElementById("idBtnButton");
-const imprimir = document.getElementById("idImprimirResultado");
-
 // DEFINICION DE FUNCIONES
 const contarElementos = function (elemento) {
   // OBTENIENDO EL NUMERO DE ETIQUETAS QUE SE HAN CREADO
@@ -20,7 +18,6 @@ const contarElementos = function (elemento) {
     console.log(i);
   }
 
-  imprimir.textContent = mensaje;
   alert("Revise la consola del navegador");
 };
 
